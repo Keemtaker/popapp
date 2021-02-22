@@ -27,7 +27,8 @@ task :sales => :environment do
     customer_id: order[:customer_id]
   )
 
-    new_sale = Sale.new(user_id: User.first.id, customer_name: customer_details.data["customer"][:given_name], customer_locality: customer_details.data["customer"][:address][:locality])
+    new_sale = Sale.new(user_id: User.first.id, customer_name: customer_details.data["customer"][:given_name], customer_locality: customer_details.data["customer"][:address][:locality],
+                        sale_created_at: order[:created_at], sale_updated_at: order[:updated_at])
 
     order[:line_items].each do | line_item |
       new_sale_array << {"catalog_object_id" => line_item[:catalog_object_id], "name" => line_item[:name], "price_total" => line_item[:total_money][:amount],
