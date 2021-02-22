@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_22_145623) do
+ActiveRecord::Schema.define(version: 2021_02_22_151016) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2021_02_22_145623) do
     t.text "line_items", default: [], array: true
     t.string "sale_created_at"
     t.string "sale_updated_at"
+    t.string "customer_country"
     t.index ["user_id"], name: "index_sales_on_user_id"
   end
 
