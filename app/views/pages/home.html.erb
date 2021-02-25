@@ -4,16 +4,10 @@
 <br>
 <br>
 <br>
-<a href='#' id='example' rel='popover' data-animation="true" data-placement='left' data-html='true'
-    data-content='<div><%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png"%></div><br>
-    <span>Keem from Tamale, Ghana, just bought a playstation</span>'
-    title=''>
-</a>
+
+<%= link_to "Square Connect", "https://connect.squareupsandbox.com/oauth2/authorize?client_id=#{ENV['SQUARE_APPLICATION_ID']}&scope=MERCHANT_PROFILE_READ", target: '_blank'%>
 
 
-<!-- <a href='#' id='example' rel='popover' data-animation="true" data-placement='left' data-html='true'
-    data-content='<div><%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png"%></div><br>
-    <span><%= @sale.customer_name %> from <%= @sale.customer_locality %>, <%= @sale.country_name %> purchased a <%= @line_item_name %></span>'
-    title=''>
-</a>
+<!-- <a href='#' id='example' rel='popover' data-animation="true" data-placement='right' data-content='Its so simple to create a tooltop for my website!' title='Twitter Bootstrap Popover'></a>
  -->
+
