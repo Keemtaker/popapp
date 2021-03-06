@@ -36,10 +36,10 @@ class User < ApplicationRecord
   )
 
     if results.data.present?
-      completed_orders = results.data["orders"].select { |order| order[:customer_id].present? }
-      if completed_orders.present?
+      customer_orders = results.data["orders"].select { |order| order[:customer_id].present? }
+      if customer_orders.present?
         new_sale_array = []
-        completed_orders.each do | order |
+        customer_orders.each do | order |
           customer_details = $merchant_client.customers.retrieve_customer(
           customer_id: order[:customer_id]
         )
