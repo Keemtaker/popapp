@@ -1,13 +1,59 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
 
-<br>
-<br>
-<br>
+    <main role="main">
 
-<%= link_to "Square Connect", "https://connect.squareupsandbox.com/oauth2/authorize?client_id=#{ENV['SQUARE_APPLICATION_ID']}&scope=#{@api_permission}", target: '_blank'%>
+      <div class="jumbotron">
+        <div class="container">
+          <h1 class="display-3">Increase Sales in your Square Online Store!</h1>
+          <p>Generate a deep sense of trust & urgency for your products. PopApp let your online visitors know your product is in demand, building FOMO (Fear Of Missing Out) and a sense of urgency.</p>
+          <p><%= link_to "Get Started", "https://connect.squareupsandbox.com/oauth2/authorize?client_id=#{ENV['SQUARE_APPLICATION_ID']}&scope=#{@api_permission}", target: '_blank', class:"btn btn-primary btn-lg"%></p>
+        </div>
+      </div>
 
 
-<!-- <a href='#' id='example' rel='popover' data-animation="true" data-placement='right' data-content='Its so simple to create a tooltop for my website!' title='Twitter Bootstrap Popover'></a>
- -->
+      <!-- Marketing messaging and featurettes
+      ================================================== -->
+      <!-- Wrap the rest of the page in another container to center all the content. -->
 
+      <div class="container marketing">
+        <!-- START THE FEATURETTES -->
+
+
+        <div class="row featurette">
+          <div class="col-md-7">
+            <h2 class="featurette-heading">Generate more sales. <span class="text-muted">Increase conversions.</span></h2>
+            <p class="lead">PopApp demonstrates the authenticity of your store. Recent store notifications shows that your store is busy and that customers trust your products. It is well known that the FOMO (Fear of Missing Out) is a known driver of consumer purchases.</p>
+          </div>
+          <div class="col-md-5">
+            <%= image_tag "sales.jpg", class: "featurette-image img-fluid mx-auto", alt: "Square Online Sales picture"%>
+          </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+          <div class="col-md-7 order-md-2">
+            <h2 class="featurette-heading">Integrates Seamlessly with Square. <span class="text-muted">No hassle.</span></h2>
+            <p class="lead">PopApp is build to work exclusively on Square. It is setup with simplicity in mind. Once you sign up, the app automatically retreives your recent sales (upto 30 sales).</p>
+          </div>
+          <div class="col-md-5 order-md-1">
+            <%= image_tag "square-img2.jpg", class: "featurette-image img-fluid mx-auto", alt: "Square Online Sales picture"%>
+          </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <!-- <div class="row featurette">
+          <div class="col-md-7">
+            <h2 class="featurette-heading">. <span class="text-muted">Checkmate.</span></h2>
+            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+          </div>
+          <div class="col-md-5">
+            <%= image_tag "square-img.jpg", class: "featurette-image img-fluid mx-auto", alt: "Square Online Sales picture"%>
+          </div>
+        </div>
+
+        <hr class="featurette-divider"> -->
+
+        <!-- /END THE FEATURETTES -->
+
+      </div><!-- /.container -->
