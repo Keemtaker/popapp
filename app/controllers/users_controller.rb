@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :callback ]
+  skip_before_action :authenticate_user!, only: [ :callback, :show ]
+  protect_from_forgery except: :show
 
   def show
     @user = User.find(params[:id])

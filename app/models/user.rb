@@ -11,7 +11,7 @@ class User < ApplicationRecord
   has_many :sales, dependent: :destroy
 
   def to_param
-    "#{id}-#{slug}"
+    "#{id} + #{slug}"
   end
 
 
