@@ -36,13 +36,3 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
 });
 
-
-
-$('#example').popover({
-  'placement': 'auto',
-  'template': '<div class="popover" role="tooltip"><div class="arrow"></div><span class="btn btn-link float-right pop-close">x</span><h3 class="popover-header"></h3><div class="popover-body"></div></div>'
-}).popover('show');
-
-$('.pop-close').click(function() {
-    $('#example').popover('hide');
-});

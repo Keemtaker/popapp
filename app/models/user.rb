@@ -1,5 +1,7 @@
 class User < ApplicationRecord
   after_create :retrieve_sales
+  after_validation :set_slug, only: [:create, :update]
+
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -7,6 +9,12 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :sales, dependent: :destroy
+
+  def to_param
+    "#{id} + #{slug}"
+  end
+
+
 
   def retrieve_sales
     $merchant_client = Square::Client.new(
@@ -59,7 +67,12 @@ class User < ApplicationRecord
     end
   end
 
+
   private
+
+  def set_slug
+    self.slug = merchant_id[0..2].to_s.parameterize
+  end
 
   def email_required?
      false
