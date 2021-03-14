@@ -8,7 +8,7 @@
 <% @sales.shuffle.each do | sale | %>
   <% sampled_line_item = JSON.parse sale.line_items.sample.gsub('=>', ':') %>
   <a href='#' id='example' rel='popover' data-animation="true" data-placement='right'
-  data-content="<%= sale.customer_name %> from <%= sale.customer_locality %>, purchased <%= sampled_line_item["name"]%> 🎉" title='Sales Popover'></a>
+  data-content="<%= sale.customer_name %> from <%= sale.customer_locality %>, <%= sale.country_name %> purchased <%= sampled_line_item["name"]%> 🎉" title='Sales Popover'></a>
 <% end %>
 
 <script type="text/javascript">

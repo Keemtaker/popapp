@@ -34,6 +34,7 @@ class User < ApplicationRecord
 
     results = $merchant_client.orders.search_orders(
     body: {
+      limit: 30,
       location_ids: [
         merchant_results.data["merchant"][:main_location_id]
       ],
