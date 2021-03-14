@@ -4,6 +4,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @sales = @user.sales.limit(30).order("id DESC")
   end
 
 

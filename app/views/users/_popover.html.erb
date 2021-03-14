@@ -9,10 +9,10 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </head>
 
-
-<% lists = ["c", "w", "d"] %>
-<% lists.shuffle.each do | list | %>
-  <a href='#' id='example' rel='popover' data-animation="true" data-placement='right' data-content='<%= list %>' title='Twitter Bootstrap Popover'></a>
+<% @sales.shuffle.each do | sale | %>
+  <% sampled_line_item = JSON.parse sale.line_items.sample.gsub('=>', ':') %>
+  <a href='#' id='example' rel='popover' data-animation="true" data-placement='right'
+  data-content="<%= sale.customer_name %> from <%= sale.customer_locality %>, purchased <%= sampled_line_item["name"]%> 🎉" title='Sales Popover'></a>
 <% end %>
 
 <script type="text/javascript">
