@@ -2,6 +2,12 @@ class User < ApplicationRecord
   after_create :retrieve_sales
   after_validation :set_slug, only: [:create, :update]
 
+  validates :merchant_id, presence: true
+  validates :access_token, presence: true
+  validates :refresh_token, presence: true
+  validates :access_token_expires_at, presence: true
+
+
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
