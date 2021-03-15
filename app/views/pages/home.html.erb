@@ -5,7 +5,7 @@
         <div class="container">
           <h1 class="display-3">Increase Sales in your Square Online Store!</h1>
           <p>Generate a deep sense of trust & urgency for your products. PopApp let your online visitors know your product is in demand, building FOMO (Fear Of Missing Out) and a sense of urgency.</p>
-          <p><%= link_to "Get Started", "https://connect.squareupsandbox.com/oauth2/authorize?client_id=#{ENV['SQUARE_APPLICATION_ID']}&scope=#{ENV['SQUARE_PERMISSIONS']}", target: '_blank', class:"btn btn-primary btn-lg"%></p>
+          <p><%= link_to "Get Started", "https://#{ENV['OAUTH_ENVIRONMENT']}/oauth2/authorize?client_id=#{ENV['SQUARE_APPLICATION_ID']}&scope=#{ENV['SQUARE_PERMISSIONS']}", target: '_blank', class:"btn btn-primary btn-lg"%></p>
         </div>
       </div>
 

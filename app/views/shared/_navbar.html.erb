@@ -15,7 +15,7 @@
         </li>
       <% else %>
         <li class="nav-item">
-          <%= link_to "Sign in with Square", "https://connect.squareupsandbox.com/oauth2/authorize?client_id=#{ENV['SQUARE_APPLICATION_ID']}&scope=#{ENV['SQUARE_PERMISSIONS']}", target: '_blank', class:"btn btn-primary"%>
+          <%= link_to "Sign in with Square", "https://#{ENV['OAUTH_ENVIRONMENT']}/oauth2/authorize?client_id=#{ENV['SQUARE_APPLICATION_ID']}&scope=#{ENV['SQUARE_PERMISSIONS']}", target: '_blank', class:"btn btn-primary"%>
         </li>
       <% end %>
     </ul>
