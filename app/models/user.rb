@@ -2,6 +2,12 @@ class User < ApplicationRecord
   after_create :retrieve_sales
   after_validation :set_slug, only: [:create, :update]
 
+  validates :merchant_id, presence: true
+  validates :access_token, presence: true
+  validates :refresh_token, presence: true
+  validates :access_token_expires_at, presence: true
+
+
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -28,6 +34,7 @@ class User < ApplicationRecord
 
     results = $merchant_client.orders.search_orders(
     body: {
+      limit: 30,
       location_ids: [
         merchant_results.data["merchant"][:main_location_id]
       ],
